@@ -8,9 +8,9 @@
 First run
 ```
 ./compile-script.sh
-
+```
 or
-
+```
 javac -d bin src/cs1302/game/MinesweeperGame.java
 javac -d bin -cp bin src/cs1302/game/MinesweeperDriver.java
 ```
@@ -674,10 +674,6 @@ format:
  * Subsequent pairs of tokens are integers (separated by white space)
    indicating the location of each mine.
 
-**NOTE:** Please refer to the "**Seed File Malformed Error**" description in the
-["Displaying Errors" section](#displaying-errors) later in this document
-for constraints related to the tokens in a seed file.
-
 **NOTE:** In Java, the term _white-space_ refers to one or more characters in a sequence that
 each satisfy the conditions outlined in [`Character.isWhitespace`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Character.html#isWhitespace(char)).
 You do not need to check these conditions specifically nor use this method
@@ -702,14 +698,6 @@ The following seed files are valid and contain the same information:
 ```
     10    10 2
 0       0 1      1
-```
-
-An example seed file is present in the project materials. In order to run
-your program with the seed file, you should be able to use the following
-command (actual seed filename may differ):
-
-```
-$ java -cp bin cs1302.game.MinesweeperDriver tests/seed1.txt
 ```
 
 ## Appendix
@@ -759,45 +747,6 @@ $ java -cp bin cs1302.game.MinesweeperDriver some/path/to/seed.txt
 In this scenario, the user enters their commands into standard input
 and the game prints its output to standard output.
 
-When the grader wants to check your game, **they will not manually
-type in commands into standard input.** Instead, they will use the shell
-to redirect standard input to a file that contains user input. From the
-program's perspective, it stil thinks it's reading from standard input.
-It's just that standard input now refers to an actual file on disk
-instead of keyboard input. This is accomplished using the shell
-input redirection operator `<` or pipe `|`. For example, the grader
-might type the following to run the first test case provided
-in the [`tests`](tests/):
-
-```
-$ java -cp bin cs1302.game.MinesweeperDriver tests/tc01.seed.txt < tests/tc01.in.txt
-```
-
-Here is what each part of that command means:
-
-```
-  run with test/tc01.seed.txt
- +--------------------------------------------------------------+
-$ java -cp bin cs1302.game.MinesweeperDriver tests/tc01.seed.txt < tests/tc01.in.txt
-                                                                +-------------------+
-                                        redirect standard input to tests/tc01.in.txt
-```
-
-In this example, the shell forces the program to interpret standard input
-as the file `tests/tc01.in.txt`. Instead of halting for user input, any method
-calls to your program's `Scanner` object for `System.in` return immediately
-with a token from the file. Once the program has stopped producing output,
-the grader then compares that output to `tests/tc01.out.txt`, `tests/tc01.err.txt`, and
-`tests/tc01.combined.txt` to see ensure that everything appears as it should for
-that test case.
-
-You can run the same tests against [the oracle implementation](#minesweeper-oracle).
-Here is an example:
-
-```
-$ minesweeper-oracle cs1302.game.MinesweeperDriver tests/tc01.seed.txt < tests/tc01.in.txt
-```
-
 #### Saving Output
 
 If you want to save the standard output, standard error, and combined output of your
@@ -816,8 +765,6 @@ output files in the `test` directory.**
 <hr/>
 
 Note: This README was modified from the original project specifications, copyright information below.
-
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 <small>
 Copyright &copy; Michael E. Cotterell and the University of Georgia.
