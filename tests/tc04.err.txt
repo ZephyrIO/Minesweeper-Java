@@ -1,0 +1,6 @@
+
+Invalid Command: Command not recognized!
+
+Invalid Command: Index 5 out of bounds for length 5
+
+Invalid Command: Index -1 out of bounds for length 5
