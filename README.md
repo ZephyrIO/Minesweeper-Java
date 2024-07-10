@@ -3,15 +3,29 @@
 
 ![Unrelated image of mine."](mine.jpg)
 
+## How to Play
+
+First run
+```
+./compile-script.sh
+
+or
+
+javac -d bin src/cs1302/game/MinesweeperGame.java
+javac -d bin -cp bin src/cs1302/game/MinesweeperDriver.java
+```
+to compile the program, then run
+```
+java -cp bin cs1302.game.MinesweeperDriver [seed.txt]
+```
+
 ## Project Description
 
-Your goal is to develop a **non-recursive**, **non-GUI** (GUI = Graphical User
-Interface) version of the game called **Minesweeper**. The code for this game will
-be organized in such a way that the recursive elements of Minesweeper can
-be added at a later point in time, if desired. It will also be organized so that
-you can add a GUI to it later as well. Interestingly, the organization of some of the
-classes in this project will also introduce you to some elementary aspects of
-game programming.
+This is a **non-recursive**, **non-GUI** (GUI = Graphical User
+Interface) version of the game called **Minesweeper**. The code for this game is
+organized in such a way that the recursive elements of Minesweeper can
+be added at a later point in time, if desired. It is also organized so that
+a GUI can be added to it later as well.
 
 ### Note Concerning "No Recursion"
 
@@ -27,12 +41,12 @@ that does not contain a mine, **two** things happen:
 The second part mentioned above can cause one reveal made by the user
 to result in multiple reveals in the minefield. This behavior is what
 the literature is referring to when it talks about recursion in Mineweeper.
-**Your game should not support this behavior**. If the user reveals
+**This game does not support this behavior**. If the user reveals
 one square, then, at most, one square is revealed in the minefield.
 
 ### Minesweeper Overview
 
-In your Minesweeper, the player is initially presented with a grid of
+In Minesweeper, the player is initially presented with a grid of
 undifferentiated squares. Some of those squares contain hidden mines. The
 size of the grid, the number of mines, and the individual mine locations
 are set in advance by a seed file (more on that later) that the user
@@ -40,7 +54,7 @@ specifies as a command-line argument to your program. The ratio of the
 number of mines to the grid size is often used as a
 measure of an individual game's difficulty. The grid size can also be
 represented in terms of the number of rows and columns in the grid.
-In this project description, we may refer to the _grid_ or to the
+In this description, we may refer to the _grid_ or to the
 _minefield_. Both of these terms mean the same thing. Furthermore,
 we will use the term _square_ to denote a location in the minefield, even
 in situations where a location may be visually rectangular instead
@@ -801,7 +815,7 @@ output files in the `test` directory.**
 
 <hr/>
 
-Note: Some portions of this README were copied directly from the original project specifications, copyright information below.
+Note: This README was modified from the original project specifications, copyright information below.
 
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
 
