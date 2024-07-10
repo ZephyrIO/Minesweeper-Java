@@ -18,6 +18,7 @@ to compile the program, then run
 ```
 java -cp bin cs1302.game.MinesweeperDriver [seed.txt]
 ```
+to play the game.
 
 ## Project Description
 
@@ -98,8 +99,6 @@ revealed and the user marks it as definitely containing a mine then a round is c
 square should be marked. The user would then have to reveal this square again later. This may
 not be consistent with how you've played Minesweeper in the past but it will make it easier
 to code. We will leave it up to the user to be smart about how they play!
-
-<a id="win-conditions">
 
 The game is won only when **both** of the following conditions are met:
 
@@ -369,8 +368,6 @@ Yeah, that's old school ASCII art. Please note that the first and last lines are
 blank. Also note that the second line (containing "oh no...") begins with a single
 white space. A copy of this game over text, excluding the first and last blank
 lines, is contained in [`resources/gameover.txt`](resources/gameover.txt).
-
-<a id="graceful-exit">
 
 **Graceful Exit:** When we say that a program should exit *gracefully*, we mean that
 the *exit status* code used in the call to
